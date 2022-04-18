@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Math Shorts</string>
+    <string name="app_title">Math Shorts</string>
+    <string name="tv_select_formula">Select a formula</string>
+    <string name="spinner_description">Set of formulas to choose</string>
+    <string-array name="math_formulas">
+        <item>Law of Ohm</item>
+        <item>Divisor of voltage</item>
+        <item>Potency</item>
+    </string-array>
+</resources>
