@@ -3,6 +3,13 @@
     <string name="app_title">Math Shorts</string>
     <string name="tv_select_formula">Select a formula</string>
     <string name="spinner_description">Set of formulas to choose</string>
+    <string name="imageview_formulas_description">Image of math formulas</string>
+    <string name="resistance_paremeter">Resistance [Ω]</string>
+    <string name="current_parameter">Current [A]</string>
+    <string name="voltage_in_parameter">Voltage of input [V]</string>
+    <string name="resistance_one_parameter">Resistance 1 [Ω]</string>
+    <string name="resistance_two_parameter">Resistance 2 [Ω]</string>
+    <string name="voltage_power">Voltage [V]</string>
     <string-array name="math_formulas">
         <item>Law of Ohm</item>
         <item>Divisor of voltage</item>
