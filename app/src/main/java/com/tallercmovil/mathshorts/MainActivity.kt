@@ -71,5 +71,20 @@ class MainActivity : AppCompatActivity() {
 
         }
     }
+//    Mathematical functions for Math Shots!
+    private fun voltageOhm(current: Float, resistance: Int) : Float
+    {
+        return current * resistance
+    }
+
+    private fun voltageDivisor(voltageIn: Float, resistance1: Int, resistance2: Int): Float {
+        return (voltageIn) * ((resistance2) / (resistance1 + resistance2))
+    }
+
+    private fun potencyOhm(voltage: Float, current: Float) : Float
+    {
+        return voltage * current
+    }
+
 
 }
