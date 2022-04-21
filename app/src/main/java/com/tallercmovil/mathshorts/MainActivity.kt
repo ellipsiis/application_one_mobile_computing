@@ -117,7 +117,9 @@ class MainActivity : AppCompatActivity() {
             }
             1 -> {
 //                condition for empty values on input parameters
-                if(tvSecondParam.text.isEmpty() || tvThridParam.text.isEmpty()){
+                if(tvSecondParam.text.isEmpty() || tvThridParam.text.isEmpty() || (tvFirstParam.text.isEmpty())){
+                    tvFirstParam.error = getString(R.string.error_param)
+                    tvFirstParam.requestFocus()
                     tvSecondParam.error = getString(R.string.error_param)
                     tvSecondParam.requestFocus()
                     tvThridParam.error = getString((R.string.error_param))
@@ -143,10 +145,27 @@ class MainActivity : AppCompatActivity() {
 //
             }
             2 -> {
-                val potencyRes = potencyOhm(tvFirstParam.text.toString().toFloat(),tvSecondParam.text.toString().toFloat())
-                val potencyResRound : Float = String.format("%.4f",potencyRes).toFloat()
-                val potencyResString = "$potencyResRound [W]"
-                intent.putExtra("res",potencyResString)
+                if(tvFirstParam.text.toString().isEmpty() or tvSecondParam.text.toString().isEmpty()){
+                    tvFirstParam.error = getString(R.string.error_param)
+                    tvFirstParam.requestFocus()
+                    tvSecondParam.error = getString(R.string.error_param)
+                    tvSecondParam.requestFocus()
+                } else if((tvFirstParam.text.toString().toFloat() == 0F) ||(tvSecondParam.text.toString().toFloat() == 0F)){
+                    tvFirstParam.error = getString(R.string.error_voltage_zero)
+                    tvFirstParam.requestFocus()
+                    tvSecondParam.error = getString(R.string.error_current_zero)
+                    tvSecondParam.requestFocus()
+                }
+                else {
+                    val potencyRes = potencyOhm(
+                        tvFirstParam.text.toString().toFloat(),
+                        tvSecondParam.text.toString().toFloat()
+                    )
+                    val potencyResRound: Float = String.format("%.4f", potencyRes).toFloat()
+                    val potencyResString = "$potencyResRound [W]"
+                    intent.putExtra("res", potencyResString)
+                    flagContinue = true
+                }
             }
         }
         if(flagContinue)

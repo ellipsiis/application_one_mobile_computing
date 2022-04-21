@@ -23,7 +23,9 @@
     <string name="error_param">You must insert a value</string>
     <string name="error_resistance1_divVolt">The value of Resistance 1 must be higher of zero</string>
     <string name="error_resistance2_divVolt">The value of Resistance 2 must be higher of zero</string>
-    <string name="error_denominator_voltagedivisor">The result will be indeterminate.</string>
+    <string name="error_denominator_voltagedivisor">The result will be indeterminate</string>
+    <string name="error_voltage_zero">The voltage cannot be zero</string>
+    <string name="error_current_zero">The current must be different of zero</string>
     <string-array name="math_formulas">
         <item>Law of Ohm</item>
         <item>Divisor of voltage</item>
