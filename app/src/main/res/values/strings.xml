@@ -12,6 +12,7 @@
     <string name="voltage_power">Voltage [V]</string>
     <string name="temp_hint">Click me !</string>
     <string name="btn_calculate_title">Calculate</string>
+    <string name="result_title_tv">Result!</string>
     <string-array name="math_formulas">
         <item>Law of Ohm</item>
         <item>Divisor of voltage</item>

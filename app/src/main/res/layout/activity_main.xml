@@ -153,6 +153,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/salmon_pink"
+        android:onClick="calculateClick"
         android:text="@string/btn_calculate_title"
         android:textAllCaps="false"
         android:textColor="@color/carbon_gray"
