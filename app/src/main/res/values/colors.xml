@@ -13,4 +13,6 @@
     <color name="lavender_purple">#FFEADEFF</color>
     <color name="carbon_gray">#FF4E4E4E</color>
     <color name="blue_light">#FF0080ff</color>
+    <color name="purple_neon">#FF8D1ECC</color>
+    <color name="green_neon">#FF39FF14</color>
 </resources>
