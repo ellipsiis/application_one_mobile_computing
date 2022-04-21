@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.*
 import androidx.appcompat.content.res.AppCompatResources
+import kotlin.math.round
 
 class MainActivity : AppCompatActivity() {
 //    Fields
@@ -78,15 +79,15 @@ class MainActivity : AppCompatActivity() {
         }
     }
 //    Mathematical functions for Math Shots!
-    private fun voltageOhm(current: Int=0, resistance: Int=0) : Int {
+    private fun voltageOhm(current: Float, resistance: Float) : Float {
         return current * resistance
     }
 
-    private fun voltageDivisor(voltageIn: Int=0, resistance1: Int=0, resistance2: Int=0): Int {
-        return (voltageIn) * ((resistance2) / (resistance1 + resistance2))
+    private fun voltageDivisor(voltageIn: Float, resistance1: Float, resistance2: Float): Float {
+        return ((voltageIn * resistance2) / (resistance1 + resistance2))
     }
 
-    private fun potencyOhm(voltage: Int=0, current: Int=0) : Int
+    private fun potencyOhm(voltage: Float, current: Float) : Float
     {
         return voltage * current
     }
@@ -95,19 +96,22 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this,ResultActivity::class.java)
         when(flagSpinner){
             0 -> {
-                val ohmRes = voltageOhm(tvFirstParam.text.toString().toInt(), tvSecondParam.text.toString().toInt())
-                val ohmResString = "$ohmRes [V]"
+                val ohmRes = voltageOhm(tvFirstParam.text.toString().toFloat(), tvSecondParam.text.toString().toFloat())
+                val ohmResRound : Float = String.format("%.4f", ohmRes).toFloat()
+                val ohmResString = "$ohmResRound [V]"
                 intent.putExtra("res",ohmResString)
             }
             1 -> {
-                val divVolRes = voltageDivisor(tvFirstParam.text.toString().toInt(),tvSecondParam.text.toString().toInt(),
-                tvThridParam.text.toString().toInt())
-                val divVolResString = "$divVolRes [V]"
+                val divVolRes = voltageDivisor(tvFirstParam.text.toString().toFloat(),tvSecondParam.text.toString().toFloat(),
+                tvThridParam.text.toString().toFloat())
+                val divVolResRound : Float = String.format("%.4f", divVolRes).toFloat()
+                val divVolResString = "$divVolResRound [V]"
                 intent.putExtra("res",divVolResString)
             }
             2 -> {
-                val potencyRes = potencyOhm(tvFirstParam.text.toString().toInt(),tvSecondParam.text.toString().toInt())
-                val potencyResString = "$potencyRes [W]"
+                val potencyRes = potencyOhm(tvFirstParam.text.toString().toFloat(),tvSecondParam.text.toString().toFloat())
+                val potencyResRound : Float = String.format("%.4f",potencyRes).toFloat()
+                val potencyResString = "$potencyResRound [W]"
                 intent.putExtra("res",potencyResString)
             }
         }
