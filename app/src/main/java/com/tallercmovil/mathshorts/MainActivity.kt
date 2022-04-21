@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.view.View
 import android.widget.*
 import androidx.appcompat.content.res.AppCompatResources
-import kotlin.math.round
 
 class MainActivity : AppCompatActivity() {
 //    Fields
@@ -16,6 +15,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var tvSecondParam: TextView
     private lateinit var tvThridParam: TextView
     private var flagSpinner: Int = 0
+    private var flagContinue : Boolean = false
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -96,17 +97,50 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this,ResultActivity::class.java)
         when(flagSpinner){
             0 -> {
-                val ohmRes = voltageOhm(tvFirstParam.text.toString().toFloat(), tvSecondParam.text.toString().toFloat())
-                val ohmResRound : Float = String.format("%.4f", ohmRes).toFloat()
-                val ohmResString = "$ohmResRound [V]"
-                intent.putExtra("res",ohmResString)
+                if (tvFirstParam.text.toString().isEmpty() || tvSecondParam.text.toString().isEmpty())
+                {
+                    Toast.makeText(this@MainActivity,getString(R.string.waning_empty_param),Toast.LENGTH_SHORT).show()
+                    tvFirstParam.error = getString(R.string.error_param)
+                    tvFirstParam.requestFocus()
+                    tvSecondParam.error = getString(R.string.error_param)
+                    tvSecondParam.requestFocus()
+                } else {
+                    val ohmRes = voltageOhm(
+                        tvFirstParam.text.toString().toFloat(),
+                        tvSecondParam.text.toString().toFloat()
+                    )
+                    val ohmResRound: Float = String.format("%.4f", ohmRes).toFloat()
+                    val ohmResString = "$ohmResRound [V]"
+                    intent.putExtra("res", ohmResString)
+                    flagContinue = true
+                }
             }
             1 -> {
-                val divVolRes = voltageDivisor(tvFirstParam.text.toString().toFloat(),tvSecondParam.text.toString().toFloat(),
-                tvThridParam.text.toString().toFloat())
-                val divVolResRound : Float = String.format("%.4f", divVolRes).toFloat()
-                val divVolResString = "$divVolResRound [V]"
-                intent.putExtra("res",divVolResString)
+//                condition for empty values on input parameters
+                if(tvSecondParam.text.isEmpty() || tvThridParam.text.isEmpty()){
+                    tvSecondParam.error = getString(R.string.error_param)
+                    tvSecondParam.requestFocus()
+                    tvThridParam.error = getString((R.string.error_param))
+                    tvThridParam.requestFocus()
+                } else if ((tvSecondParam.text.toString().toFloat() == 0F) || (tvThridParam.text.toString().toFloat() == 0F)){
+                    tvSecondParam.error = getString(R.string.error_resistance1_divVolt)
+                    tvSecondParam.requestFocus()
+                    tvThridParam.error = getString((R.string.error_resistance2_divVolt))
+                    tvThridParam.requestFocus()
+                    Toast.makeText(this@MainActivity, getString(R.string.error_denominator_voltagedivisor),Toast.LENGTH_LONG).show()
+                }
+                else {
+                    val divVolRes = voltageDivisor(
+                        tvFirstParam.text.toString().toFloat(),
+                        tvSecondParam.text.toString().toFloat(),
+                        tvThridParam.text.toString().toFloat()
+                    )
+                    val divVolResRound: Float = String.format("%.4f", divVolRes).toFloat()
+                    val divVolResString = "$divVolResRound [V]"
+                    intent.putExtra("res", divVolResString)
+                    flagContinue = true
+                }
+//
             }
             2 -> {
                 val potencyRes = potencyOhm(tvFirstParam.text.toString().toFloat(),tvSecondParam.text.toString().toFloat())
@@ -115,7 +149,8 @@ class MainActivity : AppCompatActivity() {
                 intent.putExtra("res",potencyResString)
             }
         }
-        startActivity(intent)
+        if(flagContinue)
+            startActivity(intent)
 
     }
 

@@ -11,5 +11,5 @@
     android:textSize="28sp"
     android:padding="2sp"
     android:fontFamily="@font/inter"
-
+    android:width="5sp"
     />

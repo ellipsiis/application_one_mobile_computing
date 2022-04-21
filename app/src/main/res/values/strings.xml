@@ -13,6 +13,17 @@
     <string name="temp_hint">Click me !</string>
     <string name="btn_calculate_title">Calculate</string>
     <string name="result_title_tv">Result!</string>
+    <string name="hyena_logo_description">ellipsiis logo</string>
+    <string name="developer">Developed by: Daniel A. Zarco Manzanares</string>
+    <string name="version">v1.0.1</string>
+    <string name="subject">Mobile Computing, Gpo 03</string>
+    <string name="developer_info">ellipsiis</string>
+    <string name="github_user">GitHub: ellipsiis</string>
+    <string name="waning_empty_param">Please, insert some value</string>
+    <string name="error_param">You must insert a value</string>
+    <string name="error_resistance1_divVolt">The value of Resistance 1 must be higher of zero</string>
+    <string name="error_resistance2_divVolt">The value of Resistance 2 must be higher of zero</string>
+    <string name="error_denominator_voltagedivisor">The result will be indeterminate.</string>
     <string-array name="math_formulas">
         <item>Law of Ohm</item>
         <item>Divisor of voltage</item>
