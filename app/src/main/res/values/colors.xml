@@ -9,10 +9,12 @@
     <color name="white">#FFFFFFFF</color>
     <color name="white_pearl">#FFFAFBF5</color>
     <color name="champagne">#FFF7E7CE</color>
-    <color name="salmon_pink">#FFFFDEE3</color>
+    <color name="pale_pink">#FFFFDEE3</color>
+    <color name="salmon_pink">#FFFF91A4</color>
     <color name="lavender_purple">#FFEADEFF</color>
     <color name="carbon_gray">#FF4E4E4E</color>
     <color name="blue_light">#FF0080ff</color>
     <color name="purple_neon">#FF8D1ECC</color>
     <color name="green_neon">#FF39FF14</color>
+    <color name="blue_pale">#FFAFCFEE</color>
 </resources>
