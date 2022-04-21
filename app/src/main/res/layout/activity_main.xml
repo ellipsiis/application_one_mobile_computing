@@ -87,7 +87,7 @@
         android:onClick="calculateClick"
         android:text="@string/btn_calculate_title"
         android:textAllCaps="false"
-        android:textColor="@color/carbon_gray"
+        android:textColor="#795548"
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
