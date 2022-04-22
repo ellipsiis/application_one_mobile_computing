@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Math Shorts</string>
+    <string name="tv_select_formula">Selecciona una formula</string>
+    <string name="spinner_description">Conjunto de formulas a elegir</string>
+    <string name="imageview_formulas_description">Imagen de formulas</string>
+    <string name="resistance_paremeter">Resistencia [Ω]</string>
+    <string name="current_parameter">Corriente [A]</string>
+    <string name="voltage_in_parameter">Voltaje de entrada [V]</string>
+    <string name="resistance_one_parameter">Resistencia 1 [Ω]</string>
+    <string name="resistance_two_parameter">Resistencia 2 [Ω]</string>
+    <string name="voltage_power">Voltaje [V]</string>
+    <string name="temp_hint">Haz click</string>
+    <string name="btn_calculate_title">Calcular</string>
+    <string name="result_title_tv">¡Resultado!</string>
+    <string name="hyena_logo_description">logo de ellipsiis</string>
+    <string name="waning_empty_param">Inserta un valor</string>
+    <string name="error_param">Debes de insertar un valor</string>
+    <string name="error_resistance1_divVolt">El valor de la Resistencia 1 debe ser mayor a cero</string>
+    <string name="error_resistance2_divVolt">El valor de la Resistencia 2 debe ser mayor a cero</string>
+    <string name="error_denominator_voltagedivisor">El resultado será indeterminado</string>
+    <string name="error_voltage_zero">El voltaje no puede ser cero</string>
+    <string name="error_current_zero">La corriente debe de ser diferente de cero</string>
+    <string-array name="math_formulas">
+        <item>Ley de Ohm</item>
+        <item>Divisor de voltaje</item>
+        <item>Potencia</item>
+    </string-array>
+</resources>
